@@ -1,30 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {TaskType, Todolist} from "./Todolist";
 
 function App() {
+
+    let tasks1: TaskType[] = [
+        {id: 1, title: 'CSS', isDone: true},
+        {id: 2, title: 'JS', isDone: true},
+        {id: 3, title: 'React', isDone: false},
+    ]
+
+    let tasks2: TaskType[] = [
+        {id: 1, title: 'Bread', isDone: true},
+        {id: 2, title: 'Milk', isDone: true},
+        {id: 3, title: 'Beer', isDone: false},
+    ]
+
     return (
         <div className="App">
-            <Todolist/>
+            <Todolist title={'What to learn'} tasks={tasks1}/>
+            <Todolist title={'What to by'} tasks={tasks2}/>
         </div>
     );
-}
-
-function Todolist() {
-    return (
-        <div>
-            <h3>What to learn</h3>
-            <div>
-                <input/>
-                <button>+</button>
-            </div>
-            <ul>
-                <li><input type="checkbox" checked={true}/>HTML</li>
-                <li><input type="checkbox" checked={true}/>CSS</li>
-                <li><input type="checkbox" checked={false}/>React</li>
-            </ul>
-        </div>
-    )
 }
 
 export default App;
